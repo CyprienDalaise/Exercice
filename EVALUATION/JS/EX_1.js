@@ -1,32 +1,32 @@
-//A finir probleme sur la remise //verifier le fonctionnement // utilité de PAP ?????
+/* A partir de la saisie d'un prix d'un produit et de la quantité affiché le prix a payer avec les diverses réductions */
 
 
-var PU = parseInt(prompt("Quel est le prix unitaire du produit ? "));
-var QTECOM = parseInt(prompt("quantité commandé ? "));
-var TOT = PU * QTECOM;
-var PAP = TOT;
-var Rem = 0;
+var PU = parseInt(prompt("Quel est le prix unitaire du produit ? ")); 
+var QTECOM = parseInt(prompt("quantité commandé ? ")); 
+var TOT = PU * QTECOM; // prix Total
+var PAP = TOT; // Prix à payer
+var Rem = 0; // remise
 console.log("le total " + TOT);
 
 
-if (TOT > 100 && TOT < 200) {
+if (TOT > 100 && TOT < 200) {  // condition sur prix total entre 100 et 200 euros, 5% de remise.
     Rem = TOT * (5 / 100)
     console.log(Rem);
     PAP -= Rem;
     console.log("le total " + TOT);
     alert("Vous bénificiez d'une remise de 5%, ce qui réduit votre facture à " + (PAP) + "€")
-} else if (TOT > 200) {
+} else if (TOT > 200) { // condition sur prix total au dessus de 200 euros, 10 % de remise.
     Rem = TOT * (10 / 100)
     PAP -= Rem;
     console.log("le total " + TOT);
     alert("Vous bénificiez d'une remise de 10%, ce qui réduit votre facture à " + (PAP) + "€")
 }
-var Port = TOT * (2 / 100);
+var Port = TOT * (2 / 100); // calcul du frais de port de 2%
 console.log(Port);
 
-if (PAP > 500) {
+if (PAP > 500) { // frais de port offert si le prix à payer dépasse 500 euros 
     alert("Frais de port offert, vous gagnez " + (Port) + "€ !!!")
-} else if (Port < 6) {
+} else if (Port < 6) { // frais de port au minimum de 6 euros
     Port = 6;
     TOT = PAP + Port;
     console.log("le total " + TOT);
@@ -36,4 +36,4 @@ if (PAP > 500) {
 }
 console.log("le total " + TOT);
 console.log("le PAP " + PAP);
-alert("Le montant de votre facture s'éléve à " + (TOT) + "€")
+alert("Le montant de votre facture s'éléve à " + (TOT) + "€") 
