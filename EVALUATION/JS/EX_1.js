@@ -1,26 +1,26 @@
 /* A partir de la saisie d'un prix d'un produit et de la quantité affiché le prix a payer avec les diverses réductions */
 
 
-var PU = parseInt(prompt("Quel est le prix unitaire du produit ? "));
+var PU = parseInt(prompt("Quel est le prix unitaire du produit ? ")); // parseInt converti la chaine de caractere en nombre
 var QTECOM = parseInt(prompt("quantité commandé ? "));
 var TOT = PU * QTECOM; // prix Total
 var PAP = TOT; // Prix à payer
 var Rem = 0; // remise
 console.log("le total " + TOT);
 
-
-if (TOT > 100 && TOT < 200) { // condition sur prix total entre 100 et 200 euros, 5% de remise.
+var pourcentage = 0;
+if (TOT > 100 && TOT <= 200) { // condition sur prix total entre 100 et 200 euros, 5% de remise.
     Rem = TOT * (5 / 100) // calcule  %
+    pourcentage = 5;
     console.log(Rem);
-    PAP -= Rem; // enleve la remise
-    console.log("le total " + TOT);
-    alert("Vous bénificiez d'une remise de 5%, ce qui réduit votre facture à " + (PAP) + "€")
 } else if (TOT > 200) { // condition sur prix total au dessus de 200 euros, 10 % de remise.
     Rem = TOT * (10 / 100)
-    PAP -= Rem;
-    console.log("le total " + TOT);
-    alert("Vous bénificiez d'une remise de 10%, ce qui réduit votre facture à " + (PAP) + "€")
+    pourcentage = 10;
 }
+
+PAP -= Rem;
+console.log("le total " + TOT);
+alert("Vous bénificiez d'une remise de " + pourcentage + "% , ce qui réduit votre facture à " + (PAP) + "€")
 var Port = PAP * (2 / 100); // calcul du frais de port de 2%
 console.log(Port);
 

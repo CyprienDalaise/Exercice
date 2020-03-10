@@ -1,13 +1,18 @@
-// rentrez des chiffres entiers puis afficher l'entier minimum et maximum.
+// rentrez des chiffres entiers puis afficher l 'entier minimum et maximum.
 
 var min = 0 // declarer 2 variables et le tableau
 var max = 0
 var tab = []
+
+
 do {
-    var x = parseInt(prompt("rentrez vos chiffres entiers, le 0 stop le programme : "))
+    var x;
+    x = prompt("rentrez vos chiffres entiers, le 0 stop le programme : ");
+    x = parseInt(x);
     tab.push(x); // ajoute au tablau la variable x
     console.log(tab);
 } while (x != 0);
+
 tab.pop();
 tab.sort();
 min = tab[0];

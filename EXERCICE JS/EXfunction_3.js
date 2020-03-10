@@ -11,18 +11,17 @@ function multiple(x) {
 
 
 function SomMoy() {
-
     var somme = 0;
-    var compt = -1;
-
+    var compt = 0;
     do {
         var x = parseInt(prompt("rentrez votre chiffre ? "));
         somme += x;
-        compt += 1;
+        if (x != 0) {
+            compt += 1;
+        }
     } while (x != 0);
 
     alert("la somme des valeur est : " + somme + " comptabilisé avec : " + compt + " chiffres\nla moyenne des valeurs est : " + (somme / compt));
-
 }
 
 
