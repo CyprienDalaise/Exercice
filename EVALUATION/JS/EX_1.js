@@ -10,9 +10,9 @@ console.log("le total " + TOT);
 
 
 if (TOT > 100 && TOT < 200) { // condition sur prix total entre 100 et 200 euros, 5% de remise.
-    Rem = TOT * (5 / 100)
+    Rem = TOT * (5 / 100) // calcule  %
     console.log(Rem);
-    PAP -= Rem;
+    PAP -= Rem; // enleve la remise
     console.log("le total " + TOT);
     alert("Vous bénificiez d'une remise de 5%, ce qui réduit votre facture à " + (PAP) + "€")
 } else if (TOT > 200) { // condition sur prix total au dessus de 200 euros, 10 % de remise.
@@ -21,7 +21,7 @@ if (TOT > 100 && TOT < 200) { // condition sur prix total entre 100 et 200 euros
     console.log("le total " + TOT);
     alert("Vous bénificiez d'une remise de 10%, ce qui réduit votre facture à " + (PAP) + "€")
 }
-var Port = TOT * (2 / 100); // calcul du frais de port de 2%
+var Port = PAP * (2 / 100); // calcul du frais de port de 2%
 console.log(Port);
 
 if (PAP > 500) { // frais de port offert si le prix à payer dépasse 500 euros
